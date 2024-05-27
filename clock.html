@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-clock</title>
+    <style>
+    body{
+        height:100vh;
+        background-color: #000000b6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .container{
+            width: 200px;
+            height:200px;
+            background-image: url(clock.jpg);
+            background-size:cover;
+            background-position: center;
+            border-radius: 50%;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;   
+              isolation: isolate;
+              color: white;
+        }
+        .container::after{
+            border-radius: 50%;
+            content: '';
+            z-index: -1;
+            position: absolute;
+            inset: 0;
+            background: rgba(120, 110, 110, 0.898);
+            opacity: 0.5;  
+            filter: brightness(0.1)
+        }
+        .hrs::after{
+            content: 'Hours';
+            font-size:20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .min::after{
+            content: 'Minuts';
+            font-size:20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+        }
+        .sec::after{
+            content: 'Seconds';
+            font-size:20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .d{
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="hrs">00</span>
+        <span class="d">:</span>
+        <span class="min">00</span>
+        <span class="d">:</span>
+        <span class="sec">00</span>
+    </div>
+    <script src="clock.js"></script>
+</body>
+</html>
